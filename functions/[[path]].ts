@@ -58,8 +58,7 @@ export const onRequest: PgFunction = async function (context) {
 
   context.waitUntil(logToAPI(context));
 
-  // return response;
-  return new Response(resource);
+  return response;
 };
 
 const logToAPI = (context: Context) => {
