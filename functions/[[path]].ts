@@ -22,6 +22,8 @@ export const onRequest: PgFunction = async function (context) {
         ? { 'content-type': 'text/javascript' }
         : {}),
       ...originalResponse.headers,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Max-Age': '86400',
       // https://developer.chrome.com/blog/enabling-shared-array-buffer/#origin-trial
       'Origin-Trial': env.ORIGIN_TRIAL_TOKEN,
     },
